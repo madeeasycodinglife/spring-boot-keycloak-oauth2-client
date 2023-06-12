@@ -1,0 +1,18 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          gateway:
+            provider: my-provider
+            clientId: spring-boot-oauth-client
+            clientSecret: P9tJaiBlBY3mM9O2j0yTPtl2Cb837auk
+            authorizationGrantType: authorization_code
+            redirectUri: "http://localhost:8081/login/oauth2/code/gateway"
+            scope: openid
+        provider:
+          my-provider:
+            issuerUri: "http://localhost:8080/realms/madeeasy-test-user-service"
+server:
+  port: 8081
+
